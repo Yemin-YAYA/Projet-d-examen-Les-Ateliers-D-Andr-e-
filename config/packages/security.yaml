@@ -26,8 +26,8 @@ security:
 
             # configure the maximum login attempts
             login_throttling:
-                max_attempts: 3          # per minute ...
-                interval: '1 minutes' # ... or in a custom period
+                max_attempts: 5          # par minute ...
+                interval: '10 minutes' # ... or in a custom period
 
             # use a custom rate limiter via its service ID
            
