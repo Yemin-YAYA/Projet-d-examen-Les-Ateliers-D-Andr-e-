@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de contact
+{% endblock %}
+
+{% block body %}
+		<div class="container ">
+			<div class="row justify-content-center">
+
+				<div class="col-md-4"aria-hidden="true"></div>
+
+				<!-- Colonne centrale contenant le formulaire -->
+				<div class="col-md-4 contactee">
+					<h1 class="mb-5 titreforme" title="Pour me contacter" aria-label="Formulaire de contact">Contactez moi</h1>
+
+					<form method="post" enctype="multipart/form-data">
+						{{ form_errors(formContact) }}
+						{{ form_start(formContact) }}
+						{{ form_widget(formContact._token) }}
+
+						<!-- Name input -->
+						<div class="form-outline mb-4">
+							{{ form_widget(formContact.name, {attr: { class: 'form-control', placeholder: 'Nom','aria-label': 'Nom', title:'Nom'} }) }}
+						</div>
+
+						<!-- Email input -->
+						<div class="form-outline mb-4">
+							{{ form_widget(formContact.email, {attr: { class: 'form-control', placeholder: 'Adresse Mail','aria-label': 'Adresse Mail', title:'Adresse-mail' } }) }}
+						</div>
+
+						<!-- Message input -->
+						<div class="form-outline mb-2">
+							{{ form_widget(formContact.message, {attr: { class: 'form-control', placeholder: 'Message', rows: '6', style: 'height: 150px;','aria-label': 'Message', title:'Message'} }) }}
+						</div>
+						<div class="cgu mb-2 text-center">Aucune donnée personnelle n’est conservée par ce formulaire</div>
+
+						<!-- Submit button -->
+						<div class="text-center d-flex justify-content-center">
+							<button type="submit" class="ycta" title="envoyer" aria-label="Envoyer la demande de contact">
+								<span>Envoyer</span>
+								<div class="ycta-icon">
+									<svg width="13px" height="10px" viewbox="0 0 13 10">
+										<path d="M1,5 L11,5"></path>
+										<polyline points="8 1 12 5 8 9"></polyline>
+									</svg>
+								</div>
+							</button>
+						</div>
+
+						{% for message in app.flashes('success') %}
+							<div class="alert alert-success mt-2">
+								{{ message }}
+							</div>
+						{% endfor %}
+					
+					</div>
+				</form>
+
+				<div class="col-md-4"aria-hidden="true"></div>
+			</div>
+		</div>
+	
+{% endblock %}

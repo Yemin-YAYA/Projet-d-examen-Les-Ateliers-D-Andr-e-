@@ -1,0 +1,183 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}	
+	{{ post.title }}
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid mt-3">
+		<div
+			class="container containers">
+			<!-- Rubrik au-dessus du contenu -->
+			<div class="row">
+				<div class="col-md-12 mb-3 wtitle">
+					{{ post.rubrik }}</h1>
+			</div>
+		</div>
+
+		<div
+			class="row center-content">
+			<!-- Colonne pour le contenu existant -->
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12 mb-3 text-center">
+						{% if post.image1 is not empty %}
+							<img class="img-fluid" src="{{ asset('divers/images/' ~ post.image1) }}" alt="Image du post {{ post.rubrik }}" loading="lazy"/>
+						{% endif %}
+					</div>
+					<div class="col-md-12 mb-4 text-justify wtexte">
+						{{ post.content|raw }}
+					</div>
+					<div class="col-md-12 mb-1 wcreat">
+						<time datetime="{{ post.createdAt|date('Y-m-d') }}">le
+							{{ post.createdAt|date('d/m/Y') }}</time>
+					</div>
+					<div class="col-md-12 mb-5 d-flex align-items-center wavat">
+						<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="Avatar de {{ post.user.firstname }} {{ post.user.lastname }}" style="width:20px;" loading="lazy">
+						&ensp;
+						<span>{{ post.user.firstname|capitalize }}
+							{{ post.user.lastname|upper }}</span>
+						&ensp;
+					</div>
+				</div>
+			</div>
+
+			<!-- Nouvelle colonne pour l'image2 et content2 -->
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-12 mb-3 text-center">
+						{% if post.image2 is not empty %}
+							<img class="img-fluid" src="{{ asset('divers/images/' ~ post.image2) }}" alt="Deuxième image du post {{ post.rubrik }}" loading="lazy"/>
+						{% endif %}
+					</div>
+					<div class="col-md-12 mb-3 text-justify wtexte">
+						{{ post.content2|raw }}
+					</div>
+				</div>
+				<div class="col-md-12 mb-1 wcreat">
+					<time datetime="{{ post.createdAt|date('Y-m-d') }}">le
+						{{ post.createdAt|date('d/m/Y') }}</time>
+				</div>
+				<div class="col-md-12 mb-5 d-flex align-items-center wavat">
+					<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="Avatar de {{ post.user.firstname }} {{ post.user.lastname }}" style="width:20px;" loading="lazy">
+					&ensp;
+					<span>{{ post.user.firstname|capitalize }}
+						{{ post.user.lastname|upper }}</span>
+					&ensp;
+				</div>
+
+			</div>
+		</div>
+
+		<p class="descrip mb-5">Sur cette page, vous trouverez quelques-unes de mes créations uniques, spécialement conçues pour mes clients. Chaque création est entièrement personnalisable selon vos désirs et vos préférences. Vous avez une idée précise mais ne savez pas comment la concrétiser ? Contactez-moi, et ensemble, nous donnerons vie à votre projet, en veillant à ce qu'il reflète parfaitement vos attentes.</p>
+
+		<!-- Bloc du nombre de commentaires -->
+		<div class="row wtexte mt-4">
+			<p>{{ post.comments|length }}
+				Commentaire(s)</p>
+		</div>
+
+		<!-- Formulaire de commentaire et affichage des commentaires -->
+		{% if app.user %}
+			<!-- Formulaire de commentaire -->
+			<div class="row mb-3 wrapper">
+				<button id="toggle-comment-form" class="cta" aria-expanded="false">
+					<span>Ajouter un commentaire</span>
+					<div class="cta-icon">
+						<svg width="13px" height="10px" viewbox="0 0 13 10">
+							<path d="M1,5 L11,5"></path>
+							<polyline points="8 1 12 5 8 9"></polyline>
+						</svg>
+					</div>
+				</button>
+
+				<!-- Conteneur du formulaire caché par défaut -->
+				<div id="comment-form-container" style="display: none;">
+					{{ form_errors(comment_form) }}
+					{{ form_start(comment_form) }}
+					{{ form_widget(comment_form._token) }}
+
+					<!-- Champ de texte pour le commentaire -->
+					<div class="form-outline mb-4">
+						{{ form_widget(comment_form.content, {attr: { class: 'form-control textaera', placeholder: 'Écrivez votre commentaire ici...', 'aria-label': 'Ecrire votre commentaire ici', title: 'Ecrire un commentaire'} }) }}
+					</div>
+
+					<!-- Bouton personnalisé pour soumettre le commentaire -->
+					<div class="text-center ">
+						<button type="submit" class="bta" title="Envoyer le commentaire" aria-label="Envoyer le commentaire">
+							<span>Envoyer</span>
+							<div class="bta-icon">
+								<svg width="13px" height="10px" viewbox="0 0 13 10">
+									<path d="M1,5 L11,5"></path>
+									<polyline points="8 1 12 5 8 9"></polyline>
+								</svg>
+							</div>
+						</button>
+					</div>
+					
+				</div>
+			</div>
+
+			<!-- Affichage des commentaires -->
+			<div class="row">
+				<button id="toggle-comments" class="cta">
+					<span>Lire les commentaire(s)</span>
+					<div class="cta-icon">
+						<svg width="13px" height="10px" viewbox="0 0 13 10">
+							<path d="M1,5 L11,5"></path>
+							<polyline points="8 1 12 5 8 9"></polyline>
+						</svg>
+					</div>
+				</button>
+			</div>
+
+			<div id="comments-container" style="display: none;">
+				{% for comment in comments %}
+					<!-- Commentaire individuel -->
+					<div class="comment mb-3 border-bottom pb-3">
+						<div
+							class="d-flex align-items-center p-2">
+							<!-- Avatar -->
+							<div class="me-3">
+								<img class="img-fluid roundedImage" src="{{ asset('divers/avatars/' ~ comment.user.avatar) }}" alt="avatar" style="width: 20px; height: 20px;" loading="lazy"/>
+							</div>
+							<!-- Pseudo -->
+							<div class="userName">
+								<strong>{{ comment.user.pseudo|capitalize }}</strong>
+							</div>
+							<!-- Date à droite -->
+							<div class="text-start ms-3">
+								{{ comment.createdAt|date('H:i') }}
+							</div>
+						</div>
+						<!-- Contenu du commentaire -->
+						<div class="mt-2 p-2" style="font-size: 1em;">
+							{{ comment.content|raw }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+
+		{% else %}
+			<p class="commente">
+				<a class="lien" href="{{ path('app_login') }}">Connectez-vous</a>
+				pour accéder aux commentaires.
+			</p>
+		{% endif %}
+	</div>
+</div>
+
+<script>
+	{% if app.user %}
+document.getElementById('toggle-comment-form').addEventListener('click', function () {
+var formContainer = document.getElementById('comment-form-container');
+formContainer.style.display = formContainer.style.display === 'none' || formContainer.style.display === '' ? 'block' : 'none';
+});
+
+document.getElementById('toggle-comments').addEventListener('click', function () {
+var commentsContainer = document.getElementById('comments-container');
+commentsContainer.style.display = commentsContainer.style.display === 'none' || commentsContainer.style.display === '' ? 'block' : 'none';
+});{% endif %}
+</script>{% endblock %}
