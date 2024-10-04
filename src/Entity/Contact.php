@@ -23,6 +23,10 @@ class Contact
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
+    #[ORM\Column(length: 50, nullable: true)] 
+    private ?string $raison = null;
+
+    // Getters et setters
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +64,19 @@ class Contact
     public function setMessage(string $message): static
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    // Getter et setter pour 'raison'
+    public function getRaison(): ?string
+    {
+        return $this->raison;
+    }
+
+    public function setRaison(?string $raison): self
+    {
+        $this->raison = $raison;
 
         return $this;
     }
