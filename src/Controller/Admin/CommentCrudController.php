@@ -27,7 +27,7 @@ class CommentCrudController extends AbstractCrudController
         IntegerField::new('id')->onlyOnIndex(),       
         TextField::new('post.title', 'Titre du Post')->onlyOnIndex(),
         TextField::new('post.rubrik.name', 'Nom de la rubrique')->onlyOnIndex(),
-        TextareaField::new('content', 'Commentaire')->setColumns('col-md-6'),
+        TextareaField::new('content', 'Commentaires')->setColumns('col-md-6'),
         DateField::new('createdAt')->onlyOnIndex(),
         AssociationField::new('user', 'Pseudo')->setColumns('col-md-4'),
     ];

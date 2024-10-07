@@ -6,7 +6,7 @@
 {% block body %}
 	<div class="container-fluid mt-2">
 		<div class="row">
-			<div class="col-md-3"aria-hidden="true"></div>
+			<div class="col-md-3" aria-hidden="true"></div>
 			<div class="col-md-6">
 				<div class="corp1">
 					<h2 class="titledusite">Les Ateliers d'Andrée</h2>
@@ -15,7 +15,7 @@
 					</p>
 				</div>
 			</div>
-			<div class="col-md-3"aria-hidden="true"></div>
+			<div class="col-md-3" aria-hidden="true"></div>
 		</div>
 	</div>
 	<!-- Carrousel-->
@@ -24,16 +24,19 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-2"aria-hidden="true"></div>
+			<div class="col-md-2" aria-hidden="true"></div>
 			<div class="col-md-8">
 				<div>
 					<h2 class="titlequest">Vous avez des questions ?</h2>
 					<p class="question">
-						Pour toute question ou projet, je suis à votre entière disposition. N'hésitez pas à me contacter ; je me ferai un plaisir de répondre à vos demandes et de concrétiser vos rêves les plus ambitieux. Ensemble, donnons vie à vos aspirations les plus audacieuses.
+						Pour toute question ou projet, je suis à votre entière disposition. N'hésitez pas à
+						<a href="{{ path('app_contact') }}" class="link-contact">me contacter</a>
+						; je me ferai un plaisir de répondre à vos demandes et de concrétiser vos rêves les plus ambitieux. Ensemble, donnons vie à vos aspirations les plus audacieuses.
 					</p>
+
 				</div>
 			</div>
-			<div class="col-md-2"aria-hidden="true"></div>
+			<div class="col-md-2" aria-hidden="true"></div>
 		</div>
 	</div>
 	<div class="container zcom mt-2">
@@ -63,7 +66,7 @@
 			</div>
 		</div>
 
-		<!-- Conteneur zcom avec la carte et la section "Contacter-moi" côte à côte -->
+		<!-- Conteneur avec la carte et la section "Contacter-moi" côte à côte -->
 		<div class="container zcom mt-4">
 			<div class="row cadre">
 				<div class="col-12 text-center mb-4">
@@ -82,13 +85,7 @@
 				<div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
 					<a class="ucta" href="{{ path('app_contact') }}" title="Pour me contacter">
 						<div>
-							<span class="ucta-se">Contactez-moi</span>
-						</div>
-						<div class="ucta-icon">
-							<svg width="13px" height="10px" viewbox="0 0 13 10">
-								<path d="M1,5 L11,5"></path>
-								<polyline points="8 1 12 5 8 9"></polyline>
-							</svg>
+							<span class="boutonContact">Contactez-moi</span>
 						</div>
 					</a>
 					<p class="adresse">
@@ -100,5 +97,5 @@
 			</div>
 		</div>
 	</div>
-	
+
 {% endblock %}

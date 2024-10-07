@@ -30,11 +30,14 @@ class ContactType extends AbstractType
             ])
             ->add('raison', ChoiceType::class, [
                 'choices' => [
-                    'Questions' => 'question',
-                    'Devis' => 'devis',
+                    'Questions' => 'Questions',
+                    'Devis' => 'Devis',
+                    'Supprimer mes données' => 'Supprimer mes données',
+                    'Demander accès à mes données' => 'Demander accès à mes données',
+                    'Modifier mes données' => 'Modifier mes données',
                 ],
                 'placeholder' => 'Motif du contact', 
-                'expanded' => false, // Garder sous forme de <select>
+                'expanded' => false, 
                 'multiple' => false,
             ])
             ->add('submit', SubmitType::class, [

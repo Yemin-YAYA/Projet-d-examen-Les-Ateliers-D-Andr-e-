@@ -1,0 +1,200 @@
+/*Main de la show*/
+.comment:last-child {
+  border-bottom: none; /* Aucune bordure sous le dernier commentaire */
+}
+.wtitle {
+font-family: 'Diphylleia', sans-serif;
+font-size: 20px;
+font-weight: bold;
+text-decoration: underline;
+margin-top: 50px;
+}
+.wtexte {
+font-family: "Poppins", sans-serif;
+font-size: medium;
+text-align: justify;
+}
+.wcreat {
+font-family: "Poppins", sans-serif;
+font-size: 12px;
+font-weight: bold;
+text-align: left;
+}
+.wavat {
+font-size: 12px;
+font-family: "Poppins", sans-serif;
+}
+.center-content {
+display: flex;
+justify-content: center;
+margin-top: 10px;
+}
+.containers{
+margin-bottom: 30px;
+}
+.descrip{
+font-family: "Poppins", sans-serif;
+text-align: justify;
+font-size: 17px !important;
+}
+                   /*Bulle du commentaire*/
+.textaera {
+width: 50% !important;
+height: 150px; /* Ajustez la hauteur ici pour réduire la taille */
+font-size: 1em; /* Taille du texte à l'intérieur */
+padding: 10px; /* Espacement intérieur pour aérer un peu le contenu */
+border-radius: 10px; /* Ajustez le rayon pour rendre les coins plus ou moins arrondis */
+border: 1px solid #ccc; /* Couleur et épaisseur de la bordure */
+}
+/*Bouton de redirection ver le formulaire de contact*/
+.bouton span{
+  font-family: 'Diphylleia', sans-serif;
+ 
+}
+a.bouton{
+  font-family: 'Diphylleia', sans-serif;
+  font-weight: bold;
+  color: black;
+}
+.bouton{
+  display: block;
+  background-color:#0588F0;
+  border-radius: 18px;
+  border: 4px double #1f69ec;
+  text-align: center;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 7px 10px;
+  width: 150px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.bouton:hover{
+  background-color:green;
+  border: 2px solid #1f69ec;
+  box-shadow: 10px 5px 5px #1f6aec7a;
+  text-align: center;
+  font-size: 21px;
+}
+/*Alignement et esapement des boutons de commentaire*/
+.btn-comment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espace entre les boutons */
+}
+  /*Bouton d'envois du commentaire*/
+  .boutonss span{
+    font-family: 'Diphylleia', sans-serif;
+    font-weight: bold;
+  }
+.boutonss{
+  display: block;
+  background-color:#0588F0;
+  border-radius: 18px;
+  border: 4px double #1f69ec;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  width: 90px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.boutonss:hover{
+  background-color:green;
+  border: 2px solid #1f69ec;
+  box-shadow: 10px 5px 5px #1f6aec7a;
+  text-align: center;
+  font-size: 16px;
+  }
+/*Bouton lire et ajouter un commnetaire*/
+.boutons span{
+  font-family: 'Diphylleia', sans-serif;
+  font-weight: bold;
+}
+.boutons{
+  display: block;
+  background-color:#0588F0;
+  border-radius: 18px;
+  border: 4px double #1f69ec;
+  text-align: center;
+  font-size: 15px; 
+  padding: 10px;
+  width: 250px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.boutons:hover{
+  background-color:green;
+  border: 2px solid #1f69ec;
+  box-shadow: 10px 5px 5px #1f6aec7a;
+  text-align: center;
+  font-size: 18px;
+  }
+                    
+
+
+  .commente{
+    font-size: 18px;    
+  }
+  .lien{
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .lien:hover{
+    color: green;
+    font-weight: bold;
+  }
+                             /*Partie pour la bulle de visualisation du commentaire*/
+#comments-container{
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+
+@media(max-width:1100px) {
+  .textaera {
+    width: 70% !important;
+  }
+}
+@media(max-width:950px) {
+  .textaera {
+    width: 100% !important;
+  }
+  
+}
+
+@media(max-width:560px) {
+    .textaera {
+      width: 100% !important;
+    }
+}
+@media(max-width:440px) {
+  .textaera {
+    width: 100% !important;
+  }
+}
+
+@media(max-width:380px) {
+  .textaera {
+    width: 100% !important;
+  }
+}
+
+@media(max-width:350px) {
+  .textaera {
+    width: 100% !important;
+  }
+}
+
+
+

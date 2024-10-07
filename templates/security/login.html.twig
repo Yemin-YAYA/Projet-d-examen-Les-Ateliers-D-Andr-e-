@@ -53,18 +53,12 @@
 						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 						
 						<div class="row d-flex justify-content-center spacebot">
-							<div class="col-md-5 d-flex justify-content-center">
-								<button type="submit" class="ycta" title="Se connecter" aria-label="Se connecter">
-									<span>Connexion</span>
-									<div class="ycta-icon">
-										<svg width="13px" height="10px" viewbox="0 0 13 10">
-											<path d="M1,5 L11,5"></path>
-											<polyline points="8 1 12 5 8 9"></polyline>
-										</svg>
-									</div>
+							<div class="col-md-5 mb-1 d-flex justify-content-center">
+								<button type="submit" class="boutonLog" title="Se connecter" aria-label="Se connecter">
+									<span>Connexion</span>									
 								</button>
 							</div>
-							<div class="pasdecompte">
+							<div class="pasdecompte mt-2">
 								Pas encore de compte ?
 								<a class="inscription" href="{{ path('app_register') }}" title="S'inscrire" aria-label="Aller sur le formulaire d'inscription">Inscrivez-vous</a>
 							</div>

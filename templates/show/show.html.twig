@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}	
+{% block title %}
 	{{ post.title }}
 {% endblock %}
 
@@ -34,7 +34,7 @@
 							{{ post.createdAt|date('d/m/Y') }}</time>
 					</div>
 					<div class="col-md-12 mb-5 d-flex align-items-center wavat">
-						<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="Avatar de {{ post.user.firstname }} {{ post.user.lastname }}" style="width:20px;" loading="lazy">
+						<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="Avatar de {{ post.user.firstname }} {{ post.user.lastname }}"  loading="lazy">
 						&ensp;
 						<span>{{ post.user.firstname|capitalize }}
 							{{ post.user.lastname|upper }}</span>
@@ -60,7 +60,7 @@
 						{{ post.createdAt|date('d/m/Y') }}</time>
 				</div>
 				<div class="col-md-12 mb-5 d-flex align-items-center wavat">
-					<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="Avatar de {{ post.user.firstname }} {{ post.user.lastname }}" style="width:20px;" loading="lazy">
+					<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="Avatar de {{ post.user.firstname }} {{ post.user.lastname }}"  loading="lazy">
 					&ensp;
 					<span>{{ post.user.firstname|capitalize }}
 						{{ post.user.lastname|upper }}</span>
@@ -72,6 +72,17 @@
 
 		<p class="descrip mb-5">Sur cette page, vous trouverez quelques-unes de mes créations uniques, spécialement conçues pour mes clients. Chaque création est entièrement personnalisable selon vos désirs et vos préférences. Vous avez une idée précise mais ne savez pas comment la concrétiser ? Contactez-moi, et ensemble, nous donnerons vie à votre projet, en veillant à ce qu'il reflète parfaitement vos attentes.</p>
 
+		<div class="row align-items-center">
+			<div class="col-md-6">
+				<p class="descrip">Alors n'attendez plus. Contactez-moi pour une question ou un devis !</p>
+			</div>
+			<div class="col-md-6 d-flex justify-content-end">
+				<a href="{{ path('app_contact') }}" class="bouton" role="button" title="Accéder au formulaire de contact">
+					Contact
+				</a>
+			</div>
+		</div>
+
 		<!-- Bloc du nombre de commentaires -->
 		<div class="row wtexte mt-4">
 			<p>{{ post.comments|length }}
@@ -81,61 +92,49 @@
 		<!-- Formulaire de commentaire et affichage des commentaires -->
 		{% if app.user %}
 			<!-- Formulaire de commentaire -->
-			<div class="row mb-3 wrapper">
-				<button id="toggle-comment-form" class="cta" aria-expanded="false">
-					<span>Ajouter un commentaire</span>
-					<div class="cta-icon">
-						<svg width="13px" height="10px" viewbox="0 0 13 10">
-							<path d="M1,5 L11,5"></path>
-							<polyline points="8 1 12 5 8 9"></polyline>
-						</svg>
-					</div>
-				</button>
+			<div class="btn-comment-container">
+				<div class="row mb-3">
+					<button id="toggle-comment-form" class="boutons" aria-expanded="false" title="Ajouter un commentaire">
+						<span>Ajouter un commentaire</span>
+					</button>
+				</div>
+			</button>
 
-				<!-- Conteneur du formulaire caché par défaut -->
-				<div id="comment-form-container" style="display: none;">
-					{{ form_errors(comment_form) }}
-					{{ form_start(comment_form) }}
-					{{ form_widget(comment_form._token) }}
+			<!-- Conteneur du formulaire caché par défaut -->
+			<div id="comment-form-container" style="display: none;">
+				{{ form_errors(comment_form) }}
+				{{ form_start(comment_form) }}
+				{{ form_widget(comment_form._token) }}
 
+				<div
+					class="comment-form-content">
 					<!-- Champ de texte pour le commentaire -->
 					<div class="form-outline mb-4">
 						{{ form_widget(comment_form.content, {attr: { class: 'form-control textaera', placeholder: 'Écrivez votre commentaire ici...', 'aria-label': 'Ecrire votre commentaire ici', title: 'Ecrire un commentaire'} }) }}
 					</div>
 
 					<!-- Bouton personnalisé pour soumettre le commentaire -->
-					<div class="text-center ">
-						<button type="submit" class="bta" title="Envoyer le commentaire" aria-label="Envoyer le commentaire">
+					<div class="text-center">
+						<button type="submit" class="boutonss" title="Envoyer le commentaire" aria-label="Envoyer le commentaire">
 							<span>Envoyer</span>
-							<div class="bta-icon">
-								<svg width="13px" height="10px" viewbox="0 0 13 10">
-									<path d="M1,5 L11,5"></path>
-									<polyline points="8 1 12 5 8 9"></polyline>
-								</svg>
-							</div>
 						</button>
 					</div>
-					
 				</div>
 			</div>
 
 			<!-- Affichage des commentaires -->
+
 			<div class="row">
-				<button id="toggle-comments" class="cta">
+				<button id="toggle-comments" class="boutons" aria-expanded="false" title="Lire les commentaires" style="white-space: nowrap;">
 					<span>Lire les commentaire(s)</span>
-					<div class="cta-icon">
-						<svg width="13px" height="10px" viewbox="0 0 13 10">
-							<path d="M1,5 L11,5"></path>
-							<polyline points="8 1 12 5 8 9"></polyline>
-						</svg>
-					</div>
+
 				</button>
 			</div>
 
 			<div id="comments-container" style="display: none;">
 				{% for comment in comments %}
 					<!-- Commentaire individuel -->
-					<div class="comment mb-3 border-bottom pb-3">
+					<div class="comment  border-bottom pb-3">
 						<div
 							class="d-flex align-items-center p-2">
 							<!-- Avatar -->
@@ -158,20 +157,17 @@
 					</div>
 				{% endfor %}
 			</div>
+		</div>
 
 
-		{% else %}
-			<p class="commente">
-				<a class="lien" href="{{ path('app_login') }}">Connectez-vous</a>
-				pour accéder aux commentaires.
-			</p>
-		{% endif %}
-	</div>
-</div>
-
-<script>
-	{% if app.user %}
-document.getElementById('toggle-comment-form').addEventListener('click', function () {
+	{% else %}
+		<p class="commente">
+			<a class="lien" href="{{ path('app_login') }}">Connectez-vous</a>
+			pour accéder aux commentaires.
+		</p>
+	{% endif %}
+</div></div><script>
+{% if app.user %}document.getElementById('toggle-comment-form').addEventListener('click', function () {
 var formContainer = document.getElementById('comment-form-container');
 formContainer.style.display = formContainer.style.display === 'none' || formContainer.style.display === '' ? 'block' : 'none';
 });
@@ -179,5 +175,4 @@ formContainer.style.display = formContainer.style.display === 'none' || formCont
 document.getElementById('toggle-comments').addEventListener('click', function () {
 var commentsContainer = document.getElementById('comments-container');
 commentsContainer.style.display = commentsContainer.style.display === 'none' || commentsContainer.style.display === '' ? 'block' : 'none';
-});{% endif %}
-</script>{% endblock %}
+});{% endif %}</script>{% endblock %}

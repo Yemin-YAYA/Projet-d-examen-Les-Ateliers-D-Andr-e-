@@ -6,7 +6,7 @@
 {% block body %}
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-md-4" aria-hidden="true"></div>
+			<div class="col-md-4" aria-hidden="true" ></div>
 
 			<!-- Colonne centrale contenant le formulaire -->
 			<div class="col-md-4 contactee">
@@ -29,7 +29,7 @@
 
 					<!-- Raison du contact input (Select box) -->
 					<div class="form-outline mb-4">						
-						{{ form_widget(formContact.raison, { 'attr': { 'class': 'form-control', 'aria-label': 'Raison du contact','title': 'Raison du contact' },'placeholder': 'Motif du contact'}) }}
+						{{ form_widget(formContact.raison, { attr: { class: 'form-control',  placeholder: 'Motif du contact','aria-label': 'Raison du contact',title: 'Raison du contact' }}) }}
 					</div>
 
 					<!-- Message input -->
@@ -41,14 +41,8 @@
 
 					<!-- Submit button -->
 					<div class="text-center d-flex justify-content-center">
-						<button type="submit" class="ycta" title="envoyer" aria-label="Envoyer la demande de contact">
-							<span>Envoyer</span>
-							<div class="ycta-icon">
-								<svg width="13px" height="10px" viewbox="0 0 13 10">
-									<path d="M1,5 L11,5"></path>
-									<polyline points="8 1 12 5 8 9"></polyline>
-								</svg>
-							</div>
+						<button type="submit" class="boutonCont" title="envoyer" aria-label="Envoyer la demande de contact">
+							<span>Envoyer</span>							
 						</button>
 					</div>
 
