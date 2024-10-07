@@ -10,7 +10,6 @@ class ContactControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/contact');
-
         // Vérifie que la réponse est réussie
         $this->assertResponseIsSuccessful();
         
@@ -21,14 +20,10 @@ class ContactControllerTest extends WebTestCase
         $form = $crawler->selectButton('Envoyer')->form();
         $form['contact[email]'] = 'test@example.com';
         $form['contact[message]'] = 'Ceci est un message de test.';
-
-        $client->submit($form);
-
-
+       $client->submit($form);
         // Vérifie la redirection après la soumission du formulaire
         $this->assertResponseRedirects('/contact');
         $client->followRedirect();
-
         // Vérifie que le message de succès est présent après redirection
         $this->assertSelectorExists('.alert-success');
         $this->assertSelectorTextContains('.alert-success', 'Votre message a été envoyé avec succès.');

@@ -48,6 +48,7 @@ class CommentCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
+             ->disable(Action::EDIT) // Désactiver l'édition
             ->setPermission(Action::DELETE, 'ROLE_ADMIN')  
             ->setPermission(Action::DELETE, 'ROLE_MODO');  
     }

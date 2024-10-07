@@ -24,8 +24,8 @@ class PostCrudController extends AbstractCrudController
     {
         return [
             IntegerField::new('id')->onlyOnIndex(),
-            TextField::new('title','Titre')->setColumns('col-md-6'),     
-            AssociationField::new('rubrik', 'Rubrique')->setColumns('col-md-4'),
+            TextField::new('title','Titres')->setColumns('col-md-6'),     
+            AssociationField::new('rubrik', 'Rubriques')->setColumns('col-md-4'),
             TextField::new('content','Texte')->setColumns('col-md-6'),        
             TextField::new('content2','Texte2')->setColumns('col-md-6'),        
             $image= ImageField::new('image1')
@@ -50,7 +50,7 @@ class PostCrudController extends AbstractCrudController
                 ->setSortable(false)
                 ->setFormTypeOption('required', false) 
                 ->setColumns('col-md-2'),
-            AssociationField::new('user', 'Utilisateur')->setColumns('col-md-6'),
+            AssociationField::new('user', 'Utilisateurs')->setColumns('col-md-6'),
             DateField::new('createdAt','Date de création')->onlyOnIndex(),
             BooleanField::new('isPublished')            
             ->setColumns('col-md-1')
