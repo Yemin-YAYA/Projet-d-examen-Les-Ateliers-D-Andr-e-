@@ -21,6 +21,7 @@ class PostRepository extends ServiceEntityRepository
      * @return Post[]
      */
     
+      // Méthodee pour récuperer touts les posts associées à une rubrique 
     public function findByRubrik(Rubrik $rubrik): array
     {
         return $this->createQueryBuilder('p')

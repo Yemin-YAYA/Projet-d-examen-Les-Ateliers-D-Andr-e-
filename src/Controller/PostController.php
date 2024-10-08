@@ -39,7 +39,7 @@ class PostController extends AbstractController
         ]);
     }
  
-      //GESTION DE LA RECUPERATION DU DETAIL D'UN POST(TOTALITE D'UN POST)+Commentaire
+      //GESTION DE LA RECUPERATION DU DETAIL D'UN POST(TOTALITE D'UN POST)+Commentaires
     
       #[Route('/post/{id}/{slug}', name: 'show', requirements: ['id' => '\d+'])]
       public function showone(Post $post, Request $req, CommentRepository $crepo): Response

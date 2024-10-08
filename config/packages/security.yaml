@@ -24,10 +24,10 @@ security:
                 enable_csrf: true
         
 
-            # configure the maximum login attempts
+            # configure le  max de login 
             login_throttling:
-                max_attempts: 5          # par minute ...
-                interval: '10 minutes' # ... or in a custom period
+                max_attempts: 5          # par minutes ...
+                interval: '10 minutes'
 
             # use a custom rate limiter via its service ID
            
