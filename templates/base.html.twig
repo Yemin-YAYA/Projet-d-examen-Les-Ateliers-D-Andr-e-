@@ -7,7 +7,8 @@
 		<meta name="description" content="{% block meta_description %}Découvrez ma passion pour la couture et la sublimation à travers des créations uniques et entièrement personnalisables. Laissez libre cours à votre imagination et contacter moi pour donner vie à vos idée les plus folles{% endblock %}">
 
 		<title>
-			{% block title %}Les Ateliers D'Andrée{% endblock %}
+			{% block title %}Les Ateliers D'Andrée
+			{% endblock %}
 		</title>
 
 		<!-- Préconnexion au domaine pour un chargement plus rapide -->
@@ -62,29 +63,29 @@
 			tarteaucitron.job.push('gtag', 'facebook', 'instagram');
 			});
 					</script>
-				</head>
-				<body>
-					{% include 'elements/header.html.twig' %}
-					<main>
-						{% block body %}{% endblock %}
-					</main>
-					{% include 'elements/footer.html.twig' %}
+	</head>
+	<body>
+		{% include 'elements/header.html.twig' %}
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+		{% include 'elements/footer.html.twig' %}
 
-					<!-- Script inline -->
-					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+		<!-- Script inline -->
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 		<script>
-				document.addEventListener("DOMContentLoaded", function () {
-				const hamburgerButton = document.querySelector(".nav-toggler");
-				const navigation = document.querySelector("nav");
-				hamburgerButton.setAttribute('aria-expanded', 'false');
-				hamburgerButton.addEventListener("click", function () {
-				const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true';
-				navigation.classList.toggle("active");
-				hamburgerButton.classList.toggle("active");
-				hamburgerButton.setAttribute('aria-expanded', ! isExpanded);
-				});
-				});
+			document.addEventListener("DOMContentLoaded", function () {
+			const hamburgerButton = document.querySelector(".nav-toggler");
+			const navigation = document.querySelector("nav");
+			hamburgerButton.setAttribute('aria-expanded', 'false');
+			hamburgerButton.addEventListener("click", function () {
+			const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true';
+			navigation.classList.toggle("active");
+			hamburgerButton.classList.toggle("active");
+			hamburgerButton.setAttribute('aria-expanded', ! isExpanded);
+			});
+			});
 		</script>
 
 		<script>
@@ -118,10 +119,11 @@
 			}
 			});
 			}, options);
-			observer.observe(mapContainer);
-			});
+			observer.observe(mapContainer);});
 		</script>
+
 		<!-- Inclusion de Bootstrap -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 				   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+		</script>
 	</body>
 </html>
