@@ -100,16 +100,31 @@ nav a {
 .colors {
   color: white;
 }
-.colorss {
-  color: white;
-  border: solid 1px white;
+/* Ajout effet de soulignement sous les rubiques de la bar de nav */
+.colorsss {
+  text-decoration: none;
+  position: relative;
+  display: inline-block; /* S'assure que l'élément prend la largeur du texte */
+  color:black;
+} /* Ajuste la couleur si nécessaire */
+
+
+.colorsss::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color:rgba(0, 0, 0, 0.678);/* Couleur du trait */
+  bottom: -5px;
+  left: 0; /* Le trait commence à gauche du texte */
+  transition: width 0.3s ease;
 }
-.colorsss:hover {
-  background: linear-gradient(90deg, rgba(182, 145, 102, 0.95) 17%, rgba(246, 244, 235, 0.8) 90%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+.colorsss:hover::after {
+  width: 100%; /* Le trait couvre toute la largeur du texte */
 }
+
+
 
 /* Spacing Adjustments */
 .title1 {
