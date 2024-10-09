@@ -1,15 +1,16 @@
 {%  extends "@EasyAdmin/page/content.html.twig" %}
-{% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <h3 class="jumbotron" style="text-align:center;">
-                Bienvenue dans l'espace d'administration
-            </h3>
-        </div>
-
-        <div class="row">
-
-        </div>
-
-    </div>
+{% block head %}
+    <link href="https://fonts.cdnfonts.com/css/gasoek-one" rel="stylesheet">
+                                           
 {% endblock %}
+
+{% block content %}
+   <div class="container-fluid" style="background-image: url('{{ asset('divers/images/dashboardImage.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh;padding: 0">
+    <div class="row">
+        <h3 style="font-family: 'Gasoek One', sans-serif; font-weight: bold; font-size: 35px; text-align: center">
+            L'espace d'administration
+        </h3>
+    </div>
+</div>
+
+{% endblock %}                                                

@@ -33,7 +33,7 @@ class ContactType extends AbstractType
                     'Questions' => 'Questions',
                     'Devis' => 'Devis',
                     'Supprimer mes données' => 'Supprimer mes données',
-                    'Demander accès à mes données' => 'Demander accès à mes données',
+                    "Demander l'accès à mes données" => "Demander l'accès à mes données",
                     'Modifier mes données' => 'Modifier mes données',
                 ],
                 'placeholder' => 'Motif du contact', 
