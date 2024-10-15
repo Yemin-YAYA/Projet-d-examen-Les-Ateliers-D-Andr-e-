@@ -40,15 +40,15 @@ class CommentCrudController extends AbstractCrudController
     }
     public function configureCrud(Crud $crud): Crud
     {
-        return $crud
-            ->setEntityLabelInSingular('un commentaire') 
+        return $crud            
             ->setDefaultSort(['createdAt' => 'DESC'])
             ->setPaginatorPageSize(5);
     }
     public function configureActions(Actions $actions): Actions
     {
         return $actions
-             ->disable(Action::EDIT) // Désactiver l'édition
+            ->disable(Action::NEW) // Désactiver la création
+            ->disable(Action::EDIT) // Désactiver l'édition
             ->setPermission(Action::DELETE, 'ROLE_ADMIN')  
             ->setPermission(Action::DELETE, 'ROLE_MODO');  
     }

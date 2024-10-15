@@ -106,7 +106,7 @@ nav a {
   position: relative;
   display: inline-block; /* S'assure que l'élément prend la largeur du texte */
   color:black;
-} /* Ajuste la couleur si nécessaire */
+} 
 
 
 .colorsss::after {
@@ -122,29 +122,6 @@ nav a {
 
 .colorsss:hover::after {
   width: 100%; /* Le trait couvre toute la largeur du texte */
-}
-
-
-
-/* Spacing Adjustments */
-.title1 {
-  color: #ffffff;
-  font-weight: bold;
-  text-shadow: 0 0 5px #d13415, 0 0 10px #d13415, 0 0 15px #d13415,
-              0 0 20px #d13415, 0 0 30px #d13415, 0 0 40px #d13415,
-              2px 2px 2px rgba(255, 233, 113, 0), 2px 2px 2px rgba(255, 233, 113, 0);
-  font-size: 70px;
-  margin: 0;
-}
-.title1a {
-  font-size: 30px;
-  text-shadow: 0 0 5px #d13415, 0 0 10px #d13415, 0 0 15px #d13415,
-              0 0 20px #d13415, 0 0 30px #d13415, 0 0 40px #d13415,
-              2px 2px 2px rgba(255, 233, 113, 0), 2px 2px 2px rgba(255, 233, 113, 0);
-  font-weight: bold;
-  color: #ffffff;
-  text-align: center;
-  margin-right: 110px;
 }
 
 /* Responsive Design */
@@ -252,9 +229,6 @@ nav a {
     margin-right: 50px;
 }
 }
-
-
-
 
 /* bouton loggin/logout/dashboard */
 .hlogggin {

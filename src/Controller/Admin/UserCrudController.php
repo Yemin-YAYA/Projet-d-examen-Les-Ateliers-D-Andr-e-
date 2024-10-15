@@ -77,6 +77,7 @@ class UserCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
+            ->disable(Action::NEW) // Désactiver la création
             ->setPermission(Action::DELETE, 'ROLE_ADMIN');    
     }
 }

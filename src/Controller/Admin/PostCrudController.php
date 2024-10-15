@@ -50,7 +50,7 @@ class PostCrudController extends AbstractCrudController
                 ->setSortable(false)
                 ->setFormTypeOption('required', false) 
                 ->setColumns('col-md-2'),
-            AssociationField::new('user', 'Utilisateurs')->setColumns('col-md-6'),
+            AssociationField::new('user', 'Utilisateurs')->setColumns('col-md-4'),
             DateField::new('createdAt','Date de création')->onlyOnIndex(),
             BooleanField::new('isPublished')            
             ->setColumns('col-md-1')
