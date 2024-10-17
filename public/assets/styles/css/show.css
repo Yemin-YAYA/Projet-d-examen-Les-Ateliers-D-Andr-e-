@@ -38,6 +38,9 @@ font-family: "Poppins", sans-serif;
 text-align: justify;
 font-size: 17px !important;
 }
+.img-fluid{
+  border-radius: 20px;
+}
                    /*Bulle du commentaire*/
 .textaera {
 width: 50% !important;

@@ -1,13 +1,13 @@
 .titler h1{
   margin-top: 50px;
   font-family: 'Diphylleia', sans-serif;
-  font-size: larger;
+  text-decoration: underline;
   font-weight: bold;
-  
 }
+
 .respace {
   justify-content: center;
-  margin-bottom: 200px;
+  margin-bottom: 200px; 
   margin-top: 50px;
 }
 .zushow {

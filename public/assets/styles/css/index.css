@@ -1,10 +1,13 @@
+body {
+  background-color: #D9D9D9;
+}
+/*Partie carousel*/
 .carousel img {
   width: 100%; /* Ajuste l'image à la largeur du conteneur */
   height: auto; /* Maintient le ratio d'aspect de l'image */
 }
-
-body {
-  background-color: #D9D9D9;
+.carousel-inner{
+  border-radius: 10px;
 }
               /*Partie presentation*/
 .titledusite{
