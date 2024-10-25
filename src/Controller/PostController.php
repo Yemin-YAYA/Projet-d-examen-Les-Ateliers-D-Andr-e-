@@ -92,7 +92,7 @@ class PostController extends AbstractController
         ]);
     }
     //Gestion de l'affichage des rubriques
-    #[Route('/rubrik/{id}', name: 'posts_by_rubrik')]
+    #[Route('/rubrik/rubrik/{id}', name: 'posts_by_rubrik')]
     public function postsByRubrik(Rubrik $rubrik, $id, PostRepository $postRepository, RubrikRepository $rubrikRepository): Response
     {
         $rubrik = $rubrikRepository->find($id);

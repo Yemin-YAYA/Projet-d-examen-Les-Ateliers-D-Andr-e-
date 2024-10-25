@@ -1,4 +1,4 @@
-/*Main de la show*/
+                        /*Main de la show*/
 .comment:last-child {
   border-bottom: none; /* Aucune bordure sous le dernier commentaire */
 }
@@ -41,7 +41,7 @@ font-size: 17px !important;
 .simg{
   border-radius: 20px;
 }
-                   /*Bulle du commentaire*/
+                                      /*Bulle du commentaire*/
 .textaera {
 width: 50% !important;
 height: 150px; /* Ajustez la hauteur ici pour réduire la taille */
@@ -50,7 +50,7 @@ padding: 10px; /* Espacement intérieur pour aérer un peu le contenu */
 border-radius: 10px; /* Ajustez le rayon pour rendre les coins plus ou moins arrondis */
 border: 1px solid #ccc; /* Couleur et épaisseur de la bordure */
 }
-/*Bouton de redirection ver le formulaire de contact*/
+                                    /*Bouton de redirection ver le formulaire de contact*/
 .bouton span{
   font-family: 'Diphylleia', sans-serif;
  
@@ -83,13 +83,13 @@ a.bouton{
   text-align: center;
   font-size: 21px;
 }
-/*Alignement et esapement des boutons de commentaire*/
+                          /*Alignement et esapement des boutons de commentaire*/
 .btn-comment-container {
   display: flex;
   flex-direction: column;
   gap: 15px; /* Espace entre les boutons */
 }
-  /*Bouton d'envois du commentaire*/
+                              /*Bouton d'envois du commentaire*/
   .boutonss span{
     font-family: 'Diphylleia', sans-serif;
     font-weight: bold;
@@ -116,7 +116,7 @@ a.bouton{
   text-align: center;
   font-size: 16px;
   }
-/*Bouton lire et ajouter un commnetaire*/
+                                    /*Bouton lire et ajouter un commnetaire*/
 .boutons span{
   font-family: 'Diphylleia', sans-serif;
   font-weight: bold;
@@ -176,7 +176,16 @@ a.bouton{
   }
   
 }
-
+@media(max-width:760px) {
+  .boutons{
+        width: 150px;
+  }
+}
+@media(max-width:760px) {
+  a.bouton{
+        width: 100px;
+  }
+}
 @media(max-width:560px) {
     .textaera {
       width: 100% !important;

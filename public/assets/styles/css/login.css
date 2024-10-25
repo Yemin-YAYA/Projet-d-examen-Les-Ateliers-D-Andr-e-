@@ -23,9 +23,9 @@ box-shadow: 10px 5px 5px rgba(0, 128, 0, 0.596);
 text-align: center;
 font-size: 18px;
 }
-/*Partie mise en ofrme du formulaire*/
+/*Partie mise en forme du formulaire*/
 .logform {
-  max-width: 400px; /* Tu peux ajuster cette valeur selon ce que tu préfères */
+  max-width: 400px; /* ajuster cette valeur selon les besoins */
   margin: 0 auto;
 }
 /*Partie bouton redirection vers formulaire de connexion*/
@@ -58,10 +58,10 @@ font-size: 18px;
     font-family: "Poppins", sans-serif;
   }
   span {
-    font-size: 10px !important;
+    font-size: 14px !important;
   }
   a.bouton{
-    font-size: 12px !important;
+    font-size: 18px !important;
 
   }
   .remember {

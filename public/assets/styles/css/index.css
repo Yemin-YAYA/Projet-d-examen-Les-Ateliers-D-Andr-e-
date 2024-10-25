@@ -1,13 +1,18 @@
 body {
   background-color: #D9D9D9;
 }
-/*Partie carousel*/
+              /*Partie carousel*/
 .carousel img {
   width: 100%; /* Ajuste l'image à la largeur du conteneur */
   height: auto; /* Maintient le ratio d'aspect de l'image */
 }
 .carousel-inner{
   border-radius: 10px;
+}
+
+#carouselExampleSlidesOnly {
+margin-top: 20px;
+margin-bottom: 35px;
 }
               /*Partie presentation*/
 .titledusite{
@@ -29,11 +34,6 @@ body {
 }
 .corp1 {
   margin-top: 50px;
-}
-                /*Carousel*/
-#carouselExampleSlidesOnly {
-  margin-top: 20px;
-  margin-bottom: 35px;
 }
               /*Partie contact*/
 #titresection {
@@ -88,14 +88,18 @@ body {
   text-align: justify;
   margin-top: 10px;
   margin-bottom: 10px;
-
+  
 }
-              /*Partie Map nous trouver*/
+
+.leaflet-popup-content-wrapper{
+    max-width: 200px;
+    margin-left:25px;
+  }
+/*Partie Map nous trouver*/
 .adresse {
   text-align: right;
   font-family: "Poppins", sans-serif;
 }
-
 
 a.link-contact{
   text-decoration: none;
@@ -105,9 +109,7 @@ a.link-contact{
 .link-contact:hover {
   color: red; /* Change la couleur en rouge au survol */
 }
-
-
-
+      /*MAP*/
 #map {
   width: 100%;
   height: 400px; /* Ajuste la hauteur si nécessaire */
@@ -185,13 +187,6 @@ a.link-contact{
   text-transform: uppercase;
  
 }
-
-/*Map*/
-.leaflet-popup-content-wrapper{
-    max-width: 200px;
-    margin-left:25px;
-  }
-
   
 @media(max-width:1070px){
   #map{

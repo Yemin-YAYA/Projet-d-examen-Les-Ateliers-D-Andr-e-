@@ -96,7 +96,7 @@ nav a {
   height: 150px;
 }
 
-/*Text Colors */
+/*Texte Colors */
 .colors {
   color: white;
 }
@@ -153,13 +153,53 @@ nav a {
   .loggouts, .zxadmin {
       margin-top: 5px; /* Espace minimal entre les icônes */
       margin-left: 0; /* Supprime toute marge à gauche */
-  }
-  /* Ajuste la taille des icônes pour un alignement uniforme */
-  .fa-user-tie, .fa-power-off, .fa-laptop {
+    }
+    /* Ajuste la taille des icônes pour un alignement uniforme */
+    .fa-user-tie, .fa-power-off, .fa-laptop {
       font-size: 1.2em; /* Ajuste la taille des icônes si nécessaire */
+    }
+    
+  }
+  /* bouton loggin/logout/dashboard */
+  .hlogggin {
+    display: flex;
+    justify-content: center;
+  }
+  .roundedImage {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    margin-left: 5px; /* Espace contrôlé entre avatar et pseudo */
+  }
+  .zxfirstname {
+    color: black;
+    margin-left: 5px; /* Ajout d'un espace contrôlé à la place de &ensp; */
+  }
+  .loggouts {
+    color: black;
+    font-weight: bold;
+  }
+  .loggouts:hover {
+    color: red;
+  }
+  .zxadmin {
+    color: black;
+  }
+  .zxadmin:hover {
+    color: green;
   }
   
-}
+  .zwlogo {
+    padding-left: 65px !important;
+    padding-right: 0px !important;
+  }
+  .mylog {
+    color: black;
+    
+  }
+  .mylog:hover {
+    color: green;
+  }
 @media(max-width: 450px) {
 .mylog {
     display: flex;
@@ -230,43 +270,3 @@ nav a {
 }
 }
 
-/* bouton loggin/logout/dashboard */
-.hlogggin {
-  display: flex;
-  justify-content: center;
-}
-.roundedImage {
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  margin-left: 5px; /* Espace contrôlé entre avatar et pseudo */
-}
-.zxfirstname {
-  color: black;
-  margin-left: 5px; /* Ajout d'un espace contrôlé à la place de &ensp; */
-}
-.loggouts {
-  color: black;
-  font-weight: bold;
-}
-.loggouts:hover {
-  color: red;
-}
-.zxadmin {
-  color: black;
-}
-.zxadmin:hover {
-  color: green;
-}
-
-.zwlogo {
-  padding-left: 65px !important;
-  padding-right: 0px !important;
-}
-.mylog {
-  color: black;
-  
-}
-.mylog:hover {
-  color: green;
-}
