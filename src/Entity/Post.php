@@ -65,6 +65,12 @@ class Post
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $content2 = null;
 
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $image5 = null;
+
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $image6 = null;
+
 
     
     public function __construct()
@@ -250,6 +256,30 @@ class Post
     public function setContent2(?string $content2): static
     {
         $this->content2 = $content2;
+
+        return $this;
+    }
+
+    public function getImage5(): ?string
+    {
+        return $this->image5;
+    }
+
+    public function setImage5(?string $image5): static
+    {
+        $this->image5 = $image5;
+
+        return $this;
+    }
+
+    public function getImage6(): ?string
+    {
+        return $this->image6;
+    }
+
+    public function setImage6(?string $image6): static
+    {
+        $this->image6 = $image6;
 
         return $this;
     }

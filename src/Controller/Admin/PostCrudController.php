@@ -50,7 +50,19 @@ class PostCrudController extends AbstractCrudController
                 ->setSortable(false)
                 ->setFormTypeOption('required', false) 
                 ->setColumns('col-md-2'),
-            AssociationField::new('user', 'Utilisateurs')->setColumns('col-md-4'),
+            $image5= ImageField::new('image5')
+                ->setUploadDir('public/divers/images')
+                ->setBasePath('divers/images')
+                ->setSortable(false)
+                ->setFormTypeOption('required', false) 
+                ->setColumns('col-md-2'),
+            $image6= ImageField::new('image6')
+                ->setUploadDir('public/divers/images')
+                ->setBasePath('divers/images')
+                ->setSortable(false)
+                ->setFormTypeOption('required', false) 
+                ->setColumns('col-md-2'),
+                AssociationField::new('user', 'Utilisateurs')->setColumns('col-md-4'),
             DateField::new('createdAt','Date de création')->onlyOnIndex(),
             BooleanField::new('isPublished')            
             ->setColumns('col-md-1')

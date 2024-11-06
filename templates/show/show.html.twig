@@ -23,9 +23,26 @@
 				<div class="row">
 					<div class="col-md-12 mb-3 text-center">
 						{% if post.image1 is not empty %}
-							<img class="img-fluid simg" src="{{ asset('divers/images/' ~ post.image1) }}" alt="Image du post {{ post.rubrik }}" loading="lazy"/>
+							<div style="position: relative; display: inline-block;">
+								<img
+								class="img-fluid simg" src="{{ asset('divers/images/' ~ post.image1) }}" alt="Image principale {{ post.rubrik }}" loading="lazy"/>
+								<!-- Bouton "+" pour ouvrir la première galerie -->
+								<button class="gallery-button" onclick="openModalGroup1(0)">+</button>
+							</div>
 						{% endif %}
+						<div id="photoModalGroup1" class="modal">
+							<span class="close" onclick="closeModalGroup1()">&times;</span>
+							<div class="modal-content">
+								<img id="modalImageGroup1" src="" alt="Photo de la première galerie">
+								<div class="modal-navigation">
+									<a class="prev" onclick="changeSlideGroup1(-1)">&#10094;</a>
+									<a class="next" onclick="changeSlideGroup1(1)">&#10095;</a>
+								</div>
+								
+							</div>
+						</div>
 					</div>
+
 					<div class="col-md-12 mb-4 text-justify wtexte">
 						{{ post.content|raw }}
 					</div>
@@ -48,8 +65,24 @@
 				<div class="row">
 					<div class="col-md-12 mb-3 text-center">
 						{% if post.image2 is not empty %}
-							<img class="img-fluid simg" src="{{ asset('divers/images/' ~ post.image2) }}" alt="Deuxième image du post {{ post.rubrik }}" loading="lazy"/>
+							<div style="position: relative; display: inline-block;">
+								<img
+								class="img-fluid simg" src="{{ asset('divers/images/' ~ post.image2) }}" alt="Deuxième image du post {{ post.rubrik }}" loading="lazy"/>
+								<!-- Bouton "+" pour ouvrir la deuxième galerie -->
+								<button class="gallery-button" onclick="openModalGroup2(0)">+</button>
+							</div>
 						{% endif %}
+						<div id="photoModalGroup2" class="modal galerie2">
+							<span class="close" onclick="closeModalGroup2()">&times;</span>
+							<div class="modal-content">
+								<img id="modalImageGroup2" src="" alt="Photo de la deuxième galerie">
+								<div class="modal-navigation">
+									<a class="prev" onclick="changeSlideGroup2(-1)">&#10094;</a>
+									<a class="next" onclick="changeSlideGroup2(1)">&#10095;</a>
+								</div>
+							</div>
+
+    </div>
 					</div>
 					<div class="col-md-12 mb-3 text-justify wtexte">
 						{{ post.content2|raw }}
@@ -175,4 +208,68 @@ formContainer.style.display = formContainer.style.display === 'none' || formCont
 document.getElementById('toggle-comments').addEventListener('click', function () {
 var commentsContainer = document.getElementById('comments-container');
 commentsContainer.style.display = commentsContainer.style.display === 'none' || commentsContainer.style.display === '' ? 'block' : 'none';
-});{% endif %}</script>{% endblock %}
+});{% endif %}
+</script>
+<script>
+   let imagesGroup1 = [
+    "{{ asset('divers/images/' ~ post.image3|url_encode) }}", 
+    "{{ asset('divers/images/' ~ post.image4|url_encode) }}"
+]; 
+let imagesGroup2 = [
+    "{{ asset('divers/images/' ~ post.image5|url_encode) }}", 
+    "{{ asset('divers/images/' ~ post.image6|url_encode) }}"
+];
+
+let currentIndex1 = 0;
+let currentIndex2 = 0;
+
+// Ouvre la modale pour le premier groupe
+function openModalGroup1(index) {
+    currentIndex1 = index;
+    updateModalImageGroup1();
+    document.getElementById('photoModalGroup1').style.display = "block";
+}
+
+// Ouvre la modale pour le deuxième groupe
+function openModalGroup2(index) {
+    currentIndex2 = index;
+    updateModalImageGroup2();
+    document.getElementById('photoModalGroup2').style.display = "block";
+}
+
+// Ferme la modale du premier groupe
+function closeModalGroup1() {
+    document.getElementById('photoModalGroup1').style.display = "none";
+}
+
+// Ferme la modale du deuxième groupe
+function closeModalGroup2() {
+    document.getElementById('photoModalGroup2').style.display = "none";
+}
+
+// Change l'image pour le premier groupe
+function changeSlideGroup1(direction) {
+    currentIndex1 = (currentIndex1 + direction + imagesGroup1.length) % imagesGroup1.length;
+    updateModalImageGroup1();
+}
+
+// Change l'image pour le deuxième groupe
+function changeSlideGroup2(direction) {
+    currentIndex2 = (currentIndex2 + direction + imagesGroup2.length) % imagesGroup2.length;
+    updateModalImageGroup2();
+}
+
+// Met à jour l'image affichée dans la modale du premier groupe
+function updateModalImageGroup1() {
+    const modalImage = document.getElementById('modalImageGroup1');
+    modalImage.src = imagesGroup1[currentIndex1];
+}
+
+// Met à jour l'image affichée dans la modale du deuxième groupe
+function updateModalImageGroup2() {
+    const modalImage = document.getElementById('modalImageGroup2');
+    modalImage.src = imagesGroup2[currentIndex2];
+}
+
+</script>
+{% endblock %}

@@ -38,7 +38,7 @@ font-family: "Poppins", sans-serif;
 text-align: justify;
 font-size: 17px !important;
 }
-.simg{
+.img-fluid.simg{
   border-radius: 20px;
 }
                                       /*Bulle du commentaire*/
@@ -162,6 +162,252 @@ a.bouton{
   background-color: white;
   border-radius: 10px;
 }
+/* Image de base et bouton "+" stylisé */
+.gallery-button {
+  position: absolute;
+  font-size: 10px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.329);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  top: 300px !important;
+  right: 2px;
+  z-index: 10;
+}
+.gallery-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles pour la modale */
+.modal.galerie2{
+  position: absolute !important;
+  overflow: hidden !important;
+  z-index: 1000;
+  left: 67%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 470px;
+  background-color: rgba(0, 0, 0, 0.567);
+  border-radius: 10px;
+  padding: 15px;
+
+}
+.modal {
+  position: absolute !important;
+  overflow: hidden !important;
+  z-index: 1000;
+  left: 620px;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  width: 660px;
+  height: 470px;
+  background-color: rgba(0, 0, 0, 0.567);
+  border-radius: 10px;
+  padding: 15px;
+}
+.modal-content {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  background-color: #fffffbbb;
+}
+.modal-content img {
+  max-width: 100%;
+  height: auto; 
+  overflow: hidden;
+  border-radius: 5px;
+  max-height: 70vh;
+}
+.modal-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.prev, .next {
+  cursor: pointer;
+  color:gray;
+  font-size: 24px;
+  padding: 10px;
+}
+.close {
+  position: absolute;
+  top: -15px;
+  right: 5px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/*responsive pour le bouton de galerie et le modal*/
+@media(max-width:1400px){
+  .gallery-button {
+    top:255px !important;
+    right: 2px;
+  }
+  .modal{
+    left:350px;
+    top:533px;
+    
+  }
+  .modal.galerie2{
+    left: 74%;
+    top: 533px;
+  }
+}
+
+@media(max-width:1211px){
+  .modal{
+    left:320px;
+    top:497px;
+    width: 555px;
+    height: 400px;    
+  }
+  .modal.galerie2{
+    left: 74%;
+    top: 495px;
+    width: 565px;
+    height: 400px;
+  }
+}
+@media(max-width:1135px){
+  .modal{
+    width: 469px;
+    height: 380px;
+    left:336px;
+    top:480px;
+  }
+  .modal.galerie2{
+    left: 71%;
+    top: 480px;
+    width: 458px;
+    height: 380px;
+  }
+}
+
+@media(max-width:994px){
+  .modal{
+    width: 469px;
+    height: 400px;
+    left:250px;
+    top:490px;
+  }
+  .modal.galerie2{
+    left: 74%;
+    top: 490px;
+    width: 458px;
+    height: 400px;
+  }
+}
+
+@media(max-width:1200px){
+  .gallery-button {
+    top:210px !important;
+    right: 2px;
+  }
+}
+@media(max-width:992px){
+  .gallery-button {
+    top:150px !important;
+    right: 2px;
+    font-size: 8px;
+  }
+}
+@media(max-width:768px){
+  .gallery-button {
+    top:150px !important;
+    right: 2px;   
+  }
+  
+}
+@media(max-width:560px){
+  .gallery-button {
+    top:245px !important;
+    right: 5px;   
+  }
+}
+@media(max-width:544px){
+  .gallery-button {
+    top:235px !important;
+    right: 5px;   
+  }
+}
+
+@media(max-width:531px){
+  .gallery-button {
+    top:225px !important;
+    right: 5px;   
+  }
+}
+
+@media(max-width:511px){
+  .gallery-button {
+    top:210px !important;
+    right: 5px;   
+  }
+}
+@media(max-width:481px){
+  .gallery-button {
+    top:195px !important;
+    right: 5px;   
+  }
+}
+@media(max-width:457px){
+  .gallery-button {
+    top:185px !important;
+    right: 5px;   
+  }
+}
+@media(max-width:437px){
+  .gallery-button {
+    top:175px !important;
+    right: 5px;   
+  }
+}
+@media(max-width:419px){
+  .gallery-button {
+    top:160px !important;
+    right: 5px; 
+    font-size: 7px;    
+  }
+}
+@media(max-width:394px){
+  .gallery-button {
+    top:145px !important;
+    right: 5px;
+    font-size: 7px;   
+  }
+}
+@media(max-width:365px){
+  .gallery-button {
+    top:130px !important;
+    right: 5px;
+    font-size: 7px;   
+  }
+}
+@media(max-width:338px){
+  .gallery-button {
+    top:115px !important;
+    right: 5px;
+    font-size: 7px;   
+  }
+}
+@media(max-width:314px){
+  .gallery-button {
+    top:110px !important;
+    right: 5px;
+    font-size: 7px;   
+  }
+}
+
+
+
+
 
 
 
