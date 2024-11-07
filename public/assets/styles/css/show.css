@@ -186,11 +186,11 @@ a.bouton{
   position: absolute !important;
   overflow: hidden !important;
   z-index: 1000;
-  left: 67%;
-  top: 52%;
+  left: 70%;
+  top: 58%;
   transform: translate(-50%, -50%);
-  width: 650px;
-  height: 470px;
+  width: 660px;
+  height: 440px;
   background-color: rgba(0, 0, 0, 0.567);
   border-radius: 10px;
   padding: 15px;
@@ -200,11 +200,11 @@ a.bouton{
   position: absolute !important;
   overflow: hidden !important;
   z-index: 1000;
-  left: 620px;
-  top: 52%;
+  left: 520px;
+  top: 58%;
   transform: translate(-50%, -50%);
   width: 660px;
-  height: 470px;
+  height: 440px;
   background-color: rgba(0, 0, 0, 0.567);
   border-radius: 10px;
   padding: 15px;
@@ -245,19 +245,40 @@ a.bouton{
 }
 
 /*responsive pour le bouton de galerie et le modal*/
-@media(max-width:1400px){
+@media(max-width:1640px){
   .gallery-button {
-    top:255px !important;
+    top:295px !important;
     right: 2px;
   }
   .modal{
-    left:350px;
-    top:533px;
-    
+    width: 655px;
+    height: 450px;   
+    left:490px;
+    top:500px;       
   }
   .modal.galerie2{
-    left: 74%;
-    top: 533px;
+    width: 655px;
+    height: 450px; 
+    left: 69%;
+    top:500px;
+  }
+}
+@media(max-width:1400px){
+  .gallery-button {
+    top:260px !important;
+    right: 2px;
+  }
+  .modal{
+    width: 655px;
+    height: 450px;   
+    left:350px;
+    top:500px;       
+  }
+  .modal.galerie2{
+    width: 655px;
+    height: 450px; 
+    left: 73%;
+    top:500px;
   }
 }
 
@@ -275,7 +296,7 @@ a.bouton{
     height: 400px;
   }
 }
-@media(max-width:1135px){
+@media(max-width:1142px){
   .modal{
     width: 469px;
     height: 380px;
@@ -289,22 +310,183 @@ a.bouton{
     height: 380px;
   }
 }
-
-@media(max-width:994px){
+@media(max-width:1026px){
   .modal{
-    width: 469px;
-    height: 400px;
-    left:250px;
-    top:490px;
+    width: 465px;
+    height: 340px;
+    left:270px;
+    top:450px;
   }
   .modal.galerie2{
+    width: 465px;
+    height: 340px;
     left: 74%;
-    top: 490px;
-    width: 458px;
-    height: 400px;
+    top: 450px;
   }
 }
 
+
+@media(max-width:997px){
+  .modal{
+    width: 350px;
+    height: 280px;
+    left: 278px ;
+    top: 430px ;
+  }
+  .modal.galerie2{
+    width: 350px;
+    height: 280px;
+    left: 70%;
+    top: 430px;
+  }
+}
+@media(max-width:885px){
+  .modal{
+    width: 350px;
+    height: 280px;
+    left: 240px ;
+    top: 430px ;
+  }
+  .modal.galerie2{
+    width: 350px;
+    height: 280px;
+    left: 71%;
+    top: 430px;
+  }
+}
+@media(max-width:768px){
+  .modal{
+    width: 350px;
+    height: 280px;
+    left: 200px ;
+    top: 430px ;
+  }
+  .modal.galerie2{
+    width: 350px;
+    height: 280px;
+    left: 73%;
+    top: 430px;
+  }
+}
+
+@media(max-width:668px){
+
+  .close {
+  position: absolute;
+  top: -5px!important;
+  right: 10px!important;
+  font-size: 30px !important;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+}
+  .modal{
+    width: 530px;
+    height: 370px;
+    left:330px;
+    top:471px;
+  }
+  .modal.galerie2{
+    width: 530px;
+    height: 370px;
+    left: 50%;
+    top: 950px;
+  }
+}
+@media(max-width:412px){
+  .close {
+  position: absolute;
+  top: -5px!important;
+  right: 10px!important;
+  font-size: 30px !important;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+}
+  .modal{
+    width: 380px;
+    height: 320px;
+    left:200px;
+    top:390px;
+  }
+  .modal.galerie2{
+    width: 380px;
+    height: 320px;
+    left: 50%;
+    top: 780px;
+  }
+}
+@media(max-width:431px){
+  .close {
+  position: absolute;
+  top: -5px!important;
+  right: 10px  !important;
+  font-size: 30px !important;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+}
+  .modal{
+    width: 380px;
+    height: 300px;
+    left:215px;
+    top:390px;
+  }
+  .modal.galerie2{
+    width: 380px;
+    height: 300px;
+    left: 50%;
+    top: 800px;
+  }
+}
+@media(max-width:391px){
+  .close {
+  position: absolute;
+  top: -5px!important;
+  right: 10px  !important;
+  font-size: 30px !important;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+}
+  .modal{
+    width: 380px;
+    height: 300px;
+    left:200px;
+    top:390px;
+  }
+  .modal.galerie2{
+    width: 380px;
+    height: 300px;
+    left: 51%;
+    top: 770px;
+  }
+}
+@media(max-width:360px){
+  .close {
+  position: absolute;
+  top: -5px!important;
+  right: 10px  !important;
+  font-size: 30px !important;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+}
+  .modal{
+    width: 300px;
+    height: 250px;
+    left:180px;
+    top:370px;
+  }
+  .modal.galerie2{
+    width: 300px;
+    height: 250px;
+    left: 50%;
+    top: 750px;
+  }
+}
+
+/*Partie pour le bouton + uniquement*/ 
 @media(max-width:1200px){
   .gallery-button {
     top:210px !important;
@@ -323,7 +505,24 @@ a.bouton{
     top:150px !important;
     right: 2px;   
   }
-  
+  @media(max-width:722px){
+    .gallery-button {
+      top:250px !important;
+      right: 2px;   
+    }  
+  }
+  @media(max-width:742px){
+    .gallery-button {
+      top:250px !important;
+      right: 2px;   
+    }  
+  }
+}
+@media(max-width:669px){
+  .gallery-button {
+    top:250px !important;
+    right: 2px;   
+  }  
 }
 @media(max-width:560px){
   .gallery-button {
@@ -410,6 +609,14 @@ a.bouton{
 
 
 
+
+
+
+
+
+
+
+/*Reste de la showview*/
 
 @media(max-width:1100px) {
   .textaera {
