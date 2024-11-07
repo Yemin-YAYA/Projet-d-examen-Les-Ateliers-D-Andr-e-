@@ -30,7 +30,8 @@ class PostCrudController extends AbstractCrudController
             TextField::new('content2','Texte2')->setColumns('col-md-6'),        
             $image= ImageField::new('image1')
                 ->setUploadDir('public/divers/images')
-                ->setBasePath('divers/images')                
+                ->setBasePath('divers/images') 
+                ->setFormTypeOption('required',false)                
                 ->setColumns('col-md-2'),
             $image2= ImageField::new('image2')
                 ->setUploadDir('public/divers/images')
