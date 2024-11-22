@@ -1,20 +1,18 @@
 <?php
 namespace App\Service;
 
-use DateTimeZone;
 use DateTimeImmutable;
+use DateTimeZone;
 
 class JWTService
 {
-    // On génère le token
-
     /**
      * Génération du JWT
-     * @param array $header 
-     * @param array $payload 
-     * @param string $secret 
-     * @param int $validity 
-     * @return string 
+     * @param array $header
+     * @param array $payload
+     * @param string $secret
+     * @param int $validity
+     * @return string
      */
     public function generate(array $header, array $payload, string $secret, int $validity = 900): string
     {
@@ -84,39 +82,23 @@ class JWTService
     // On vérifie si le token a expiré
     public function isExpired(string $token): bool
     {
-        $payload = $this->getPayload($token); // Récupère le payload du token
-    
-        if (isset($payload['exp'])) {
-            $now = (new DateTimeImmutable('now', new DateTimeZone('Europe/Paris')))->getTimestamp();
-            dump($payload['exp'], $now); // Debugging : affiche l'expiration et le timestamp actuel
-            return $payload['exp'] < $now; // Retourne true si expiré
-        }
-    
-        return true; // Considérer comme expiré si le champ 'exp' n'existe pas
+        $payload = $this->getPayload($token);
+
+        $now = new DateTimeImmutable();
+
+        return $payload['exp'] < $now->getTimestamp();
     }
 
     // On vérifie la signature du Token
-    public function check(string $token, string $secret): bool
+    public function check(string $token, string $secret)
     {
-        $parts = explode('.', $token);
-        if (count($parts) !== 3) {
-            return false; // Format invalide
-        }
-    
-        [$base64Header, $base64Payload, $providedSignature] = $parts;
-    
-        // Nettoyage des valeurs encodées
-        $base64Header = str_replace(['-', '_'], ['+', '/'], $base64Header);
-        $base64Payload = str_replace(['-', '_'], ['+', '/'], $base64Payload);
-        $providedSignature = str_replace(['-', '_'], ['+', '/'], $providedSignature);
-    
-        // Calcul de la signature
-        $secret = base64_encode($secret);
-        $calculatedSignature = base64_encode(
-            hash_hmac('sha256', $base64Header . '.' . $base64Payload, $secret, true)
-        );
-    
-        // Vérification de la signature
-        return hash_equals($providedSignature, $calculatedSignature);
+        // On récupère le header et le payload
+        $header = $this->getHeader($token);
+        $payload = $this->getPayload($token);
+
+        // On régénère un token
+        $verifToken = $this->generate($header, $payload, $secret, 0);
+
+        return $token === $verifToken;
     }
 }
