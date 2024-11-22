@@ -1,5 +1,5 @@
 .titler h1{
-  margin-top: 50px;
+  margin-top: 10px;
   font-family: 'Diphylleia', sans-serif;
   text-decoration: underline;
   font-weight: bold;
@@ -68,5 +68,45 @@ height: auto;
   font-size: 11px;
 }
 }
-
+#breadcrumb {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background-color: transparent;
+ 
+ 
   
+}
+
+#breadcrumb .breadcrumb-item {
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+}
+
+#breadcrumb .breadcrumb-item a {
+  color: #007bff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  
+}
+
+#breadcrumb .breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+#breadcrumb .breadcrumb-item.active {
+  color: #6c757d;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.breadcrumb {  
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background-color: transparent;
+  margin: 0;
+}
+

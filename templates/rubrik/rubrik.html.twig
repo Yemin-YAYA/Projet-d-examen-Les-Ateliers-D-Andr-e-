@@ -1,35 +1,41 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	{{ rubrik.name }}
+    {{ rubrik.name }}
 {% endblock %}
 
 {% block body %}
-	<div class="container-fluid">
-		<div class="container">
-			<div class="titler">
-				<h1>{{ rubrik.name }}</h1>
-			</div>
-			<div class="row respace ">
-				{% for posts in posts %}
-					<a class="col-md-2 rpost skill text-decoration-none  rbox " href="{{path('show', {'slug':posts.slug, id: posts.id})}}">
-						<div class="row">
-							{% if posts.image1 is not empty %}
-								<div class="p-0 hr">
-									<img class="img-fluid rimg" src="{{ asset('divers/images/' ~ posts.image1) }}" alt="Image du post" loading="lazy"/>
-								</div>
-							{% endif %}
-							<div class="col-md-12 mt-4 rdate ">
-								le
-								{{ posts.createdAt|date('d/m/Y') }}
-							</div>
-							<div class="col-md-12  zushow ">
-								{{ posts.title }}
-							</div>
-						</div>
-					</a>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
+
+    <div class="container-fluid">
+        <div class="container">
+        
+                {% if breadcrumbs is defined %}
+                    {% include 'filedariane/breadcrumbs.html.twig' %}
+                {% endif %}
+            <div class="titler">
+                <h1>{{ rubrik.name }}</h1>
+            </div>
+            <div class="row respace ">
+                {% for posts in posts %}
+                    <a class="col-md-2 rpost skill text-decoration-none  rbox " href="{{path('show', {'slug':posts.slug, id: posts.id})}}">
+                        <div class="row">
+                            {% if posts.image1 is not empty %}
+                                <div class="p-0 hr">
+                                    <img class="img-fluid rimg" src="{{ asset('divers/images/' ~ posts.image1) }}" alt="Image du post" loading="lazy"/>
+                                </div>
+                            {% endif %}
+                            <div class="col-md-12 mt-4 rdate ">
+                                le
+                                {{ posts.createdAt|date('d/m/Y') }}
+                            </div>
+                            <div class="col-md-12  zushow ">
+                                {{ posts.title }}
+                            </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

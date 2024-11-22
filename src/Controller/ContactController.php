@@ -11,12 +11,25 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Service\BreadcrumbService;  // Assurez-vous que ce service est bien importé
 
 class ContactController extends AbstractController
 {
+    private $breadcrumbService;
+
+    // Injection du service via le constructeur
+    public function __construct(BreadcrumbService $breadcrumbService)
+    {
+        $this->breadcrumbService = $breadcrumbService;
+    }
+
     #[Route('/contact', name: 'app_contact')]
     public function index(Request $request, MailerInterface $mailer): Response
     {
+        // Ajout du breadcrumb
+        $this->breadcrumbService->addBreadcrumb('Accueil', $this->generateUrl('app_post'));
+        $this->breadcrumbService->addBreadcrumb('Contact', $this->generateUrl('app_contact'));
+
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request); /*permet de recuperer le formulaire*/
@@ -53,8 +66,7 @@ class ContactController extends AbstractController
 
         return $this->render('contact/contact.html.twig', [
             'formContact' => $form->createView(),
+            'breadcrumbs' => $this->breadcrumbService->getBreadcrumbs(), // Passer les breadcrumbs à la vue
         ]);
     }
 }
-
-

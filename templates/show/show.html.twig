@@ -6,17 +6,21 @@
 
 {% block body %}
 
-	<div class="container-fluid mt-3">
-		<div
-			class="container containers">
-			<!-- Rubrik au-dessus du contenu -->
-			<div class="row">
-				<div class="col-md-12 mb-3 wtitle">
-					<h1>{{ post.rubrik }}</h1>
+<div class="container-fluid mt-3">
+	<div class="container containers">
+						 {% if breadcrumbs is defined %}
+                    {% include 'filedariane/breadcrumbs.html.twig' %}
+                {% endif %}
+
+		<!-- Rubrik au-dessus du contenu -->
+		<div class="row">
+			<div class="col-md-12 mb-3 wtitle">
+				<h1>{{ post.rubrik }}</h1>
 			</div>
 		</div>
 
 		<div
+
 			class="row center-content">
 			<!-- Colonne pour le contenu existant -->
 			<div class="col-md-6">
