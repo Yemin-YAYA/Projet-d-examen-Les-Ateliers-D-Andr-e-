@@ -31,7 +31,7 @@ class ContactType extends AbstractType
             ->add('raison', ChoiceType::class, [
                 'choices' => [
                     'Questions' => 'Questions',
-                    'Devis' => 'Devis',
+                    'Demande de devis' => 'Demande de devis',
                     'Supprimer mes données' => 'Supprimer mes données',
                     "Demander l'accès à mes données" => "Demander l'accès à mes données",
                     'Modifier mes données' => 'Modifier mes données',

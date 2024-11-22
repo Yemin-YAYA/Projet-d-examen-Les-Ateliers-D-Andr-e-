@@ -27,10 +27,10 @@ class ContactController extends AbstractController
 
             // Préparer le contenu de l'e-mail avec la raison du contact
             $emailContent = sprintf(
-                '<p>Nom: %s</p>
-                <p>Email: %s</p>
-                <p>Motif du contact: %s</p>
-                <p>Message: %s</p>',
+                '<p><strong>Nom:</strong> %s</p>
+                <p><strong>Email:</strong> %s</p>
+                <p><strong>Motif du contact:</strong> %s</p>
+                <p><strong>Message:</strong> %s</p>',
                 htmlspecialchars($contact->getName()),  // Nom de l'expéditeur
                 htmlspecialchars($contact->getEmail()), // Email de l'expéditeur
                 htmlspecialchars($raison),              // Raison du contact
@@ -41,7 +41,7 @@ class ContactController extends AbstractController
             $email = (new Email())
                 ->from($contact->getEmail()) /*recupere l'email de l'expediteur*/
                 ->to('sandbox@smtp.mailtrap.io') /*Email de reception*/
-                ->subject('Nouveau message de contact')
+                ->subject(sprintf('Raison du contact: %s', $contact->getRaison()))
                 ->html($emailContent); /*Le contenu de l'email avec la raison et le message*/
 
             $mailer->send($email);

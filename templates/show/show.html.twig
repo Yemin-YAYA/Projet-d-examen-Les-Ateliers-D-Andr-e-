@@ -46,17 +46,7 @@
 					<div class="col-md-12 mb-4 text-justify wtexte">
 						{{ post.content|raw }}
 					</div>
-					<div class="col-md-12 mb-1 wcreat">
-						<time datetime="{{ post.createdAt|date('Y-m-d') }}">le
-							{{ post.createdAt|date('d/m/Y') }}</time>
-					</div>
-					<div class="col-md-12 mb-5 d-flex align-items-center wavat">
-						<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="Avatar de {{ post.user.firstname }} {{ post.user.lastname }}"  loading="lazy">
-						&ensp;
-						<span>{{ post.user.firstname|capitalize }}
-							{{ post.user.lastname|upper }}</span>
-						&ensp;
-					</div>
+					
 				</div>
 			</div>
 
@@ -83,24 +73,11 @@
 							</div>
 
     </div>
-					</div>
+				</div>
 					<div class="col-md-12 mb-3 text-justify wtexte">
 						{{ post.content2|raw }}
-					</div>
+					</div>				
 				</div>
-				<div class="col-md-12 mb-1 wcreat">
-					<time datetime="{{ post.createdAt|date('Y-m-d') }}">le
-						{{ post.createdAt|date('d/m/Y') }}</time>
-				</div>
-				<div class="col-md-12 mb-5 d-flex align-items-center wavat">
-					<img class="roundedImage" src="{{ asset('divers/avatars/' ~ post.user.avatar) }}" alt="Avatar de {{ post.user.firstname }} {{ post.user.lastname }}"  loading="lazy">
-					&ensp;
-					<span>{{ post.user.firstname|capitalize }}
-						{{ post.user.lastname|upper }}</span>
-					&ensp;
-				</div>
-
-			</div>
 		</div>
 
 		<p class="descrip mb-5">Sur cette page, vous trouverez quelques-unes de mes créations uniques, spécialement conçues pour mes clients. Chaque création est entièrement personnalisable selon vos désirs et vos préférences. Vous avez une idée précise mais ne savez pas comment la concrétiser ? Contactez-moi, et ensemble, nous donnerons vie à votre projet, en veillant à ce qu'il reflète parfaitement vos attentes.</p>

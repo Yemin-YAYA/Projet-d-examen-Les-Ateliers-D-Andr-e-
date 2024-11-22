@@ -4,7 +4,7 @@ use App\Entity\User;
 use App\Entity\Post;
 use App\Entity\Rubrik;
 use App\Entity\Comment;
-use App\Repository\UserRepository;
+use App\Repository\UsersRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
@@ -17,7 +17,7 @@ class DashboardController extends AbstractDashboardController
 {
     protected $userRepository;
     //mettre en place le contructeur
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UsersRepository $userRepository)
     {
         $this->userRepository = $userRepository;
     }
