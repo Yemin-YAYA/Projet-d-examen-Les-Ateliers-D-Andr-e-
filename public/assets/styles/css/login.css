@@ -77,4 +77,13 @@ font-size: 18px;
       font-family: "Poppins", sans-serif;
     }  
 }
+/* bouton redirection mot de passe oublie */
+}
+#mpoublie{
+  font-weight:bold;
+  font-size: 12px;
+  color:black;
+}
+#mpoublie:hover{  
+color: green;
 }
